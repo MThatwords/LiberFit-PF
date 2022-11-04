@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getClients } from '../../../App/Action/Action';
+import { getClients, getLocations } from '../../../App/Action/Action';
 import { useAppSelector, useAppDispatch } from '../../../App/Hooks/Hooks';
 
 interface Props {
@@ -13,7 +13,8 @@ function GlobalTable({ dashboard }: Props) {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getClients())  
+    dispatch(getClients());
+    dispatch(getLocations());
   }, [])
 
   console.log(data.clients)
