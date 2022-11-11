@@ -19,7 +19,7 @@ function DashboardTemplate() {
                 <div className="col-span-12 z-10 fixed">
                     <NavBar dashboard={true} />
                 </div>
-                <div className="col-start-3 col-span-12 ml-14 mt-10">
+                <div className="col-start-3 col-span-12 mt-10">
                     <div className=" col-start-3 col-span-11">
                         {isAdmin && <DashAdmin />}
                         {cliente ? <Cliente /> : null}

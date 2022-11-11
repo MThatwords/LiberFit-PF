@@ -134,10 +134,10 @@ function DashHome() {
         },
     ]
     return (
-        <div className="w-full p-10">
-            <div className="px-6 pt-6">
+        <div className="w-full ">
+            <div className="">
                 {/* estadisticas */}
-                <div className="flex justify-around items-center mb-6" >
+                <div className="flex justify-around items-center mb-6 flex-wrap" >
                     {
                         estados.map((e) => (
                             <div className={e.nombre === "Ganancias" ? "flex flex-col justify-around items-center w-64 h-64 rounded-3xl bg-gray-200 border border-slate-200 px-4 py-2"
@@ -156,9 +156,9 @@ function DashHome() {
                     }
                 </div>
 
-                <div className="flex gap-6 md:grid-cols-2  place-content-center">
+                <div className="flex gap-6 md:grid-cols-2  place-content-center flex-wrap" >
                     {/* Active chart */}
-                    <div className="w-2/4 md:col-span-2 lg:col-span-1">
+                    <div className="w-96 md:col-span-2 lg:col-span-1 lg:w-1/4">
                         <div className="md:col-span-2 lg:col-span-1">
                             <div className="h-full py-8 px-6 rounded-xl border border-gray-200 bg-white align-middle">
                                 <h5 className="text-xl text-gray-600 text-center">
@@ -169,7 +169,7 @@ function DashHome() {
                         </div>
                     </div>  
                     {/* new logins chart */}
-                    <div className="w-9/12 md:col-span-2 lg:col-span-1">
+                    <div className="md:col-span-2 lg:col-span-1 w-96 lg:w-1/4">
                         <div className="md:col-span-2 lg:col-span-1">
                             <div className="h-full py-8 px-6 space-y-6 rounded-xl border border-gray-200 bg-white">
                                 <h5 className="text-xl text-gray-600 text-center">
@@ -180,7 +180,7 @@ function DashHome() {
                         </div>
                     </div>
                     {/* Subs chart */}
-                    <div className="w-2/4 md:col-span-2 lg:col-span-1">
+                    <div className="w-96 md:col-span-2 lg:col-span-1 lg:w-1/4">
                         <div className="md:col-span-2 lg:col-span-1">
                             <div className="h-full py-8 px-6 space-y-6 rounded-xl border border-gray-200 bg-white">
                                 <h5 className="text-xl text-gray-600 text-center">

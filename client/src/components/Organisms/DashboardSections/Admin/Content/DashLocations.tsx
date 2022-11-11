@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LocationsTable from "../../../../Molecules/DashboardTables/LocationsTable"
+import LocationsTable from "../../../../Molecules/DashboardTables/LocationsTable";
 
 export default function DashLocations({ link }: any) {
     // const [addItem, setAddItem] = useState(false);
@@ -11,7 +11,9 @@ export default function DashLocations({ link }: any) {
     };
     return (
         <div>
-            <LocationsTable link={link} />
+            <div className="w-tables overflow-hidden ">
+                <LocationsTable link={link} />
+            </div>
         </div>
     );
 }

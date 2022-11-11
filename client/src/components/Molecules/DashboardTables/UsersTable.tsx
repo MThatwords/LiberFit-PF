@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useTable, usePagination } from "react-table";
-import { getClients, getEmployees, getLocations, getTrainings } from "../../../App/Action/Action";
+import {
+    getClients,
+    getEmployees,
+    getLocations,
+    getTrainings,
+} from "../../../App/Action/Action";
 import { useAppSelector, useAppDispatch } from "../../../App/Hooks/Hooks";
 import Avatar from "react-avatar";
 
@@ -9,20 +14,25 @@ export default function Table({ link }: any) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(getClients())
-        dispatch(getEmployees())
+        dispatch(getClients());
+        dispatch(getEmployees());
     }, []);
 
     const data = React.useMemo(
         (): any =>
             allData[link].map((e: any) => {
-
-                const membershipState = e.active == true ? "Abonada" : "No abonada"
-                const suscriptionName = 
-                e.SubscriptionId == 1 ? "No Suscripto" :
-                e.SubscriptionId == 2 ? "Anual Bonificado" : 
-                e.SubscriptionId == 3 ? "Trimestral Bonificado" : 
-                e.SubscriptionId == 4 ? "Mensual" : null
+                const membershipState =
+                    e.active == true ? "Abonada" : "No abonada";
+                const suscriptionName =
+                    e.SubscriptionId == 1
+                        ? "No Suscripto"
+                        : e.SubscriptionId == 2
+                        ? "Anual Bonificado"
+                        : e.SubscriptionId == 3
+                        ? "Trimestral Bonificado"
+                        : e.SubscriptionId == 4
+                        ? "Mensual"
+                        : null;
 
                 return {
                     col1: (
@@ -79,34 +89,32 @@ export default function Table({ link }: any) {
         []
     );
 
-    const { 
-      getTableProps, 
-      getTableBodyProps, 
-      headerGroups, 
-      rows,
-    //   page, 
-    //   nextPage,
-    //   previousPage,
-    //   canNextPage,
-    //   canPreviousPage,
-      prepareRow,
-    } = useTable({ columns, data },
-      usePagination
-  );
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        //   page,
+        //   nextPage,
+        //   previousPage,
+        //   canNextPage,
+        //   canPreviousPage,
+        prepareRow,
+    } = useTable({ columns, data }, usePagination);
 
     return (
-        <div className="flex flex-col">
-            <div className="overflow-x-hidden sm:-mx-6 lg:-mx-8">
-                <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                    <div className="overflow-x-auto">
+            <div className="flex flex-col">
+                <div className="overflow-x-hidden">
+                    <div className="inline-block min-w-full sm:px-6 lg:px-8">
                         <table {...getTableProps()} className="min-w-full">
                             <thead className="border border-black">
                                 {headerGroups.map((headerGroup) => (
                                     <tr {...headerGroup.getHeaderGroupProps()}>
                                         {headerGroup.headers.map((column) => (
                                             <th
-                                                className="text-sm font-medium font-bold text-gray-900 px-6 py-4 text-center"
-                                                {...column.getHeaderProps()}>
+                                                className="text-sm font-medium  text-gray-900 px-6 py-4 text-center"
+                                                {...column.getHeaderProps()}
+                                            >
                                                 {column.render("Header")}
                                             </th>
                                         ))}
@@ -137,13 +145,11 @@ export default function Table({ link }: any) {
                             </tbody>
                         </table>
                         <div>
-                          {/* <button onClick={() => previousPage()}>Anterior</button>
+                            {/* <button onClick={() => previousPage()}>Anterior</button>
                           <button onClick={() => nextPage()}>Siguiente</button> */}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
     );
 }

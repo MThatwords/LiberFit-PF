@@ -82,7 +82,7 @@ export default function LocationsTable({ link }: any) {
 
     return (
         <div className="flex flex-col">
-            <div className="overflow-x-hidden sm:-mx-6 lg:-mx-8">
+            <div className="overflow-x-hidden ">
                 <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div className="overflow-x-auto">
                         <table {...getTableProps()} className="min-w-full">
@@ -91,7 +91,7 @@ export default function LocationsTable({ link }: any) {
                                     <tr {...headerGroup.getHeaderGroupProps()}>
                                         {headerGroup.headers.map((column) => (
                                             <th
-                                                className="text-sm font-medium font-bold text-gray-900 px-6 py-4 text-center"
+                                                className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
                                                 {...column.getHeaderProps()}>
                                                 {column.render("Header")}
                                             </th>
