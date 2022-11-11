@@ -9,6 +9,7 @@ import SideBar from "../../Organisms/SideBar/SideBar";
 import NavBar from "../../Organisms/Navbar/NavBar";
 import Modal from "../../Molecules/Modal/Modal";
 import { Transition } from "@headlessui/react";
+import Chat from '../../Molecules/Chat/Chat';
 
 interface Props {
   handle: any;
@@ -26,7 +27,8 @@ function HomeTemplate({ handle, name }: Props) {
         <div className="grid grid-cols-12 col-span-12 col-start-2  ">
           <div className="col-start-2 col-span-12">
             <NavBar dashboard={false}/>
-          </div>
+        </div>
+        <div className='flex flex-auto'><Chat/></div>
           <div className="mt-10 col-start-2 col-span-11  grid grid-cols-12" >
             <div className="border border-redClare border-opacity-70 col-start-2 col-span-10 overflow-hidden">
               <Anuncio />
