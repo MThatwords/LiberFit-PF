@@ -15,7 +15,6 @@ function App() {
             <Routes>
                 <Route path="/paymentComplet" element={<PaymentComplet />} />
                 <Route path="/paymentCancel" element={<PaymentCancel />} />
-                <Route path="/" element={<Landing />} />
                 <Route
                     path="/home"
                     element={<Home />}
