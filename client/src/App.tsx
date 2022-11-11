@@ -12,7 +12,6 @@ function App() {
     
     return (
         <div className="App">
-            <h1>Hola Richi test</h1?
             <Routes>
                 <Route path="/paymentComplet" element={<PaymentComplet />} />
                 <Route path="/paymentCancel" element={<PaymentCancel />} />
